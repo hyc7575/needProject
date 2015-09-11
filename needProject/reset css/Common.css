@@ -1,0 +1,54 @@
+@font-face {
+	font-family: NanumBarun;
+	src: url(../font/NanumBarunGothic.eot); /*IE9 호환성 보기*/
+	src: local("@"),
+		url(../font/NanumBarunGothic.eot?#iefix) format('embedded-opentype'), /*IE 6-8*/
+		url(../font/NanumBarunGothic.woff) format('woff'); /*표준 브라우저*/
+	font-weight: 400;
+}
+@font-face {
+	font-family: NanumBarun;
+	src:url(../font/NanumBarunGothicBold.eot); /*IE9 호환성 보기*/
+	src:local("@"),
+		url(../font/NanumBarunGothicBold.eot?#iefix) format('embedded-opentype'), /*IE 6-8*/
+		url(../font/NanumBarunGothicBold.woff) format('woff'); /*표준 브라우저*/
+	font-weight: 700;
+}
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, pre, a, address, img, ins, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, figcaption, footer, header, hgroup, menu, nav, section, summary, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+.row:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
