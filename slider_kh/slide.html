@@ -104,8 +104,11 @@
 			var $sliderImg = $('.slider_img');
 			var currentIndex = 0;
 			var loop = setInterval(slide,3000);
+
+
 			function slide() {
 				if($('.slider').is(':animated')) {
+					//배너가 이동중일때는 함수 실행 취소.
 					return false;
 				}
 				if(currentIndex === $sliderImg.length-1) {
@@ -116,12 +119,17 @@
 			}
 			
 			function createNav() {
+				//nav 틀 생성
 				$sliderBox.append('<div class="slider_btn"><ul class="slider_nav"></ul></div>');
 				for(var i = 1; i <= $('.slider_img').length; i++) {
+					//이미지의 수 만큼 nav 버튼 추가.
 					$('.slider_nav').append('<li><a href="#" id="slide_btn'+i+'" class="slide_btn"><img src="images/slide_btn'+i+'_off.png" /></a></li>');
 				}
 				$('.slider_nav li').mouseenter(function() {
+					//hover한 li의 인덱스 값 + 1 후 btnNum에 저장
 					var btnNum = $('.slider_nav li').index(this)+1;
+
+					//hover한 li에서 img를 찾고 src 속성 변경.
 					$(this).find('img').attr('src','images/slide_btn'+btnNum+'_on.png');
 				});
 				$('.slider_nav li').mouseleave(function() {
@@ -133,6 +141,7 @@
 				$('.slide_btn').click(function(e) {
 					e.preventDefault();
 					if($slider.is(':animated')) {
+						//배너가 이동중일때는 함수 실행 취소.
 						return false;
 					}
 					currentIndex = $('.slide_btn').index(this)-1;
@@ -144,7 +153,6 @@
 			createNav();
 			clickNav();
 			loop;
-		
 
 		}
 
