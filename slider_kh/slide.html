@@ -55,59 +55,18 @@
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 	<script>
-		/*function slider() {
-			// nav가 텍스트 예제
-			var $sliderBox = $('.img_slider');
-			var $slider = $('.slider');
-			var $sliderImg = $('.slider_img');
-			var currentIndex = 0;
-			var loop = setInterval(slide,3000);
-			function slide() {
-				if($('.slider').is(':animated')) {
-					return false;
-				}
-				if(currentIndex === $sliderImg.length-1) {
-					currentIndex = -1;
-				}
-				currentIndex++;
-				$slider.animate({'left':-510*currentIndex},800);
-			}
-			
-			function createNav() {
-				$sliderBox.append('<div class="slider_btn"><ul class="slider_nav"></ul></div>');
-				for(var i = 1; i <= $('.slider_img').length; i++) {
-					$('.slider_nav').append('<li><a href="#" class="n">'+i+'</a></li>');
-				}
-			}
-			function clickNav() {
-				$('.n').click(function() {
-					if($slider.is(':animated')) {
-						return false;
-					}
-					currentIndex = $(this).text()-2;
-					clearInterval(loop);
-					loop = setInterval(slide,3000);
-					slide();
-				});
-			}
-			createNav();
-			clickNav();
-			loop;
-		}
-		*/
-
-
-		// nav가 이미지 예제
-		function slider_ByImg() {
-			var $sliderBox = $('.img_slider');
-			var $slider = $('.slider');
-			var $sliderImg = $('.slider_img');
-			var currentIndex = 0;
-			var loop = setInterval(slide,3000);
+		function slider_ByImg(wrap,slider,option) {
+			var option = option || {},
+				$sliderBox = wrap,
+				$slider = slider,
+				$sliderImg = $slider.children(),
+				speed = option.speed,
+				currentIndex = 0,
+				loop = setInterval(slide,speed);
 
 
 			function slide() {
-				if($('.slider').is(':animated')) {
+				if($slider.is(':animated')) {
 					//배너가 이동중일때는 함수 실행 취소.
 					return false;
 				}
@@ -115,20 +74,19 @@
 					currentIndex = -1;
 				}
 				currentIndex++;
-				$slider.animate({'left':-510*currentIndex},800);
+				$slider.animate({'left':-510*currentIndex},speed/2);
 			}
 			
 			function createNav() {
 				//nav 틀 생성
 				$sliderBox.append('<div class="slider_btn"><ul class="slider_nav"></ul></div>');
-				for(var i = 1; i <= $('.slider_img').length; i++) {
+				for(var i = 1; i <= $sliderImg.length; i++) {
 					//이미지의 수 만큼 nav 버튼 추가.
 					$('.slider_nav').append('<li><a href="#" id="slide_btn'+i+'" class="slide_btn"><img src="images/slide_btn'+i+'_off.png" /></a></li>');
 				}
-				$('.slider_nav li').mouseenter(function() {
+				$('.slider_nav li').mouseenter(function(e) {
 					//hover한 li의 인덱스 값 + 1 후 btnNum에 저장
 					var btnNum = $('.slider_nav li').index(this)+1;
-
 					//hover한 li에서 img를 찾고 src 속성 변경.
 					$(this).find('img').attr('src','images/slide_btn'+btnNum+'_on.png');
 				});
@@ -146,7 +104,7 @@
 					}
 					currentIndex = $('.slide_btn').index(this)-1;
 					clearInterval(loop);
-					loop = setInterval(slide,3000);
+					loop = setInterval(slide,speed);
 					slide();
 				});
 			}
@@ -167,7 +125,9 @@
 
 		$(document).ready(function() {
 			//slider();
-			slider_ByImg();
+			slider_ByImg($('.img_slider'),$('.slider'),{
+				speed: 2000
+			});
 		})
 
 
