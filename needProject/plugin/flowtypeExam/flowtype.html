@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		body {
+			background-color: #eee;
+		}
+		.center {
+			margin: 0 auto;
+			width: 800px;
+			background-color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="center">
+		dadfadfdafaf
+		<br/>
+		줄어라 줄어라
+		
+
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="flowtype.js"></script>
+	<script>
+		$('body').flowtype({
+			minimum : 500,
+			maximum : 1200,
+			minFont: 12,
+			maxFont : 40
+		});
+	</script>
+</body>
+</html>
