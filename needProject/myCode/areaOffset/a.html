@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="plugin.js"></script>
+	<script src="areaOffset.js"></script>
+	<style>
+		*{margin: 0;padding: 0;}
+		.area {
+			margin-top: 50px;
+			position: relative;
+			width: 500px;
+			height: 500px;
+			border: 1px solid # eee;
+			background-color: #e1e1e1;
+			left: 60px;
+		}
+	</style>
+</head>
+<body style="height: 100%; position:relative;">
+	<a href="#" title="haha" class="tooltip">dafdafa</a>
+	<div class="area area1">
+		
+	</div>
+	<div class="area area2">
+		
+	</div>
+	<script>
+		$('.area1').areaOffset();
+		$('.area2').areaOffset();
+	</script>
+</body>
+</html>
