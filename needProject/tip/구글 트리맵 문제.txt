@@ -1,0 +1,3 @@
+<script type="text/javascript" src="//www.google.com/jsapi"></script>
+
+cdn 으로 불러오는 js링크를 이걸로 변경해준다. (구글 api에서 보여주는 예제에 있는 cdn은 실행이 안되는 날이 있다 엄청 이상이상 하다. 구글 예제페이지에서도 안나옴 ㅋㅋ)
